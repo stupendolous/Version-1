@@ -22,12 +22,12 @@
 		  </tr>
 
 		  <?php
-		  	include 'config1.php';
+		  	include 'config.php';
 
 		  	$papar=mysqli_query($connect,"SELECT * FROM jadualmainan");
 
 		  	while ($row=mysqli_fetch_array($papar)) {
-		  		$totalRecord=mysqli_num_rows($papar);
+		  		$row=array_map(fn($v)=>htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'), $row);
 		  		
 		  echo "
 		  <tr>	
@@ -35,12 +35,12 @@
 			<td>".$row['nama_produk']."</td>
         		<td>".$row['harga']."</td>
         		<td>".$row['kuantiti']."</td>
-<td><a href='delete.php?kod_produk=".$row['kod_produk']."' onclick='myHapus()'> Hapus </a></td>
+<td><a href='delete.php?kod_produk=".urlencode(html_entity_decode($row['kod_produk']))."' onclick=\"return confirm('Hapus rekod ini?')\"> Hapus </a></td>
 		  </tr>";
 		}
 		  ?>
 		</table>
-<p><a href="tambah.php">Tambah Rekod</a></p>
+<p><a href="add.php">Tambah Rekod</a> | <a href="ai.php">AI Company Control Center</a></p>
 		
 	</center>
 

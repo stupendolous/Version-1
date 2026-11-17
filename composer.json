@@ -1,0 +1,10 @@
+{
+    "name": "strgarage/ai-company",
+    "description": "STRGarage - AI-run company departments (Marketing, R&D, HR, Analytics) on top of the product inventory app",
+    "require": {
+        "php": ">=8.1",
+        "ext-mysqli": "*",
+        "anthropic-ai/sdk": "^1.0",
+        "guzzlehttp/guzzle": "^8.5"
+    }
+}

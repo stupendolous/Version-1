@@ -13,9 +13,12 @@ $harga=($_POST['harga']);
 $kuantiti=($_POST['kuantiti']);
 
 
-$insert = mysqli_query($connect, "INSERT INTO jadualmainan VALUES ('$kod_produk','$nama_produk','$harga','$kuantiti')");
+$stmt = mysqli_prepare($connect, "INSERT INTO jadualmainan (kod_produk, nama_produk, harga, kuantiti) VALUES (?, ?, ?, ?)");
+mysqli_stmt_bind_param($stmt, 'ssdi', $kod_produk, $nama_produk, $harga, $kuantiti);
+mysqli_stmt_execute($stmt);
 
 	header("location:index.php");
+	exit;
 }
 ?>
 
