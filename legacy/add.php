@@ -1,7 +1,7 @@
 <html>
 <body>
 <?php
-include('config.php');
+include(__DIR__ . '/../config.php');
 
 
 if(isset($_POST['submit']))

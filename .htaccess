@@ -1,0 +1,5 @@
+# Apache (XAMPP/MAMP): block internal folders and dotfiles.
+Options -Indexes
+RedirectMatch 404 ^/?(.*/)?(ai|lib|bin|database|storage|vendor|legacy)(/.*)?$
+RedirectMatch 404 /\.
+RedirectMatch 404 \.(sql|log|lock|json|md)$

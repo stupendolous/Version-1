@@ -5,6 +5,7 @@
         "php": ">=8.1",
         "ext-mysqli": "*",
         "anthropic-ai/sdk": "^1.0",
-        "guzzlehttp/guzzle": "^8.5"
+        "guzzlehttp/guzzle": "^8.5",
+        "erusev/parsedown": "^1.7"
     }
 }
